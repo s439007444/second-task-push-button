@@ -1,0 +1,38 @@
+
+int pinButton = 8;
+int Relay = 2;
+int stateRelay = LOW;
+int stateButton;
+int counter =0;
+
+
+
+
+void setup() {
+  pinMode(pinButton, INPUT);
+  pinMode(Relay, OUTPUT);
+}
+
+void loop() {
+  stateButton = digitalRead(pinButton);  
+ if (stateButton == HIGH)
+  {
+    counter++;
+    delay(150);
+  }
+  else if (counter==0)
+  {
+    digitalWrite(2,LOW);
+  }
+   else if (counter==1)
+  {
+    digitalWrite(2,HIGH);
+  }
+    else  
+  {
+    (counter=0);
+  } 
+   
+}
+  
+
